@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>We_Do</title>
+	<!--Animation css ---------- -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<!--css------------------>
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="./css/responssive.css">
+	<!----script------------->
+	<script src="js/jquery.min.js" type="text/javascript"></script>	
+	<script src="js/script.js" type="text/javascript"></script>
+    <!-- favicon--------------->
+	<link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="./images/favicon/apple-touch-icon.png">
+	<link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<!--boostrap-css--------->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+	rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+    <!-- fontAwsome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!------------------------spinner----------------------------->
+    <div class="spin">
+		<div class="spinner-container">
+			<img data-aos="zoom-in" data-aos-duration="3000" src="./images/imag/round icon]-01.png" alt="Loading Image">
+			<div><!-- class="spinner-border text-primary" role="status" -->
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div>
+	</div>
+	  <style>
+	  .spin {
+		background-color: black;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: opacity 0.5s ease-out; /* Match this duration to the JavaScript timeout */
+		opacity: 1;
+	}
+	/* .spinner-border {
+		height: 60px;
+		width: 60px;
+	} */
+	.spinner-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.spinner-container img {
+		width: 150px; /* Adjust size as needed */
+		height: auto;
+		margin-bottom: 20px; /* Space between image and spinner */
+	}
+</style>
+	  <script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const spinner = document.querySelector('.spin');
+
+			window.addEventListener('load', () => {
+				// Increase this value to keep the spinner visible longer
+				const displayDuration = 3000; // 3000 milliseconds = 3 seconds
+
+				setTimeout(() => {
+					spinner.style.opacity = '0';
+
+					// Ensure the timeout matches the CSS transition duration
+					setTimeout(() => {
+						spinner.style.display = 'none';
+					}, 500); // Match this value with the CSS transition duration
+				}, displayDuration);
+			});
+		});
+	</script>
+    <!---------------------(HEADER)---------------------------->
+	<header class="nav-bar" style="background-color: #E0EFF7;">
+		<nav class="navbar">
+			<div class="container-fluid">
+				<a class="navbar-brand ms-2" href="./index.html" style="width: 80px;">
+					<img src="./images/imag/dsign-logo2.png" alt="" width="100%" height="100%">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+					aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="border: none;">
+					<i class="fa-solid fa-bars" style="color: #000000; font-size: 25px;"></i>
+				</button>
+				<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+					aria-labelledby="offcanvasNavbarLabel">
+					<div class="offcanvas-header">
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./images/imag/dsign-logo2.png" alt="" width="100px" height="50px"></h5>
+						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body">
+						<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="./Home.html">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./We_are.html">We-are</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./We_Do.html">We-do</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./Product.html">Product</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./Project.html">Project</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./contact.html">Contact us</a>
+							</li>
+						</ul>
+						<form class="d-flex mt-3" role="search">
+							<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+							<button class="btn btn-outline-success" type="submit">Search</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+    <!-------------------------------------We Do------------------------->
+    <section id="We_Do">
+        <div class="We_do_head container">
+            <p data-aos="fade-up" data-aos-duration="1500">Services</p>
+            <h1 data-aos="fade-up" data-aos-duration="2000">We <span>Do</span></h1>
+            <h3 data-aos="fade-up" data-aos-duration="2500">A Signage can show <br>
+                Your identity</h3>
+        </div>
+        <div class="We_Do_img_carousal" data-aos="zoom-in-up" ata-aos-duration="3000">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="1000">
+                        <img src="./images/we_are-1.jpeg" width="100%" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/we_are-1.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="we_do_services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon_01.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Signage consultancy</h5>
+                                <p>Signage consulting offers expert guidance on the design and placement of signs to
+                                    improve
+                                    communication effectiveness.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-08.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Project Management</h5>
+                                <p>Project management involves strategic planning, implementation, and supervision of
+                                    projects to achieve
+                                    predetermined objectives while adhering to time and financial constraints.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-02.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Sign Engineering</h5>
+                                <p>Sign engineering is the design, analysis, and construction of signs, ensuring
+                                    structural integrity,
+                                    durability, and compliance with safety and regulatory standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-09.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Research & Development</h5>
+                                <p>Research and development entails exploring fresh concepts and technologies to enhance
+                                    products, foster
+                                    business expansion, and gain a competitive edge.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+
+                            <div class="col-3">
+                                <img src="./images/service_icon-03.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Interior and Exterior Construction</h5>
+                                <p>Structural design calculations evaluate building strength, stability, and safety by
+                                    analyzing loads,
+                                    materials, and geometry to ensure compliance with regulations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-10.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Event Management</h5>
+                                <p>Event management involves planning, organizing, and executing events, coordinating
+                                    logistics, vendors, and participants to create successful and memorable experiences.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                        
+                            <div class="col-3">
+                                <img src="./images/service_icon-04.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Mock-up Development</h5>
+                                <p>"Mock-up development" is a technique that involves creating a full-size representation of
+                                    a design, enabling visualization and testing of concepts before the production phase.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-11.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Offset and Digital Printing</h5>
+                                <p>Offset printing utilizes plates for high-volume production, while digital printing directly prints
+                                    from files, making it ideal for short print runs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-05.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Sign Fabrication</h5>
+                                <p>Sign fabrication is the process of creating signs using various materials and techniques to ensure
+                                    durability, design accuracy, and visual appeal.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-10.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Event Management</h5>
+                                <p>Event management involves planning, organizing, and executing events, coordinating logistics,
+                                    vendors, and participants to create successful and memorable experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-06.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Quality Assurance & Control</h5>
+                                <p>Quality assurance and control guarantee that products adhere to standards by conducting systematic testing
+                                    and monitoring production processes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-12.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Mobile Apps</h5>
+                                <p>Mobile applications refer to software solutions developed for smartphones and tablets, delivering unique
+                                    features and services to users in a mobile context.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-07.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5> Digital Marketing</h5>
+                                <p>E-commerce involves the online exchange of goods or services, using digital platforms for
+                                    transactions and business operations management.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row list_row" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-3">
+                                <img src="./images/service_icon-14.png" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h5>Video Production</h5>
+                                <p>E-commerce involves the online exchange of goods or services, using digital platforms for
+                                    transactions and business operations management.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--------------------------------- footer -->
+    <section id="footer">
+        <div class="footer">
+            <div class="container">
+                <div class="row" id="footer_row">
+                    <div class="col-3 footer_log_col">
+                        <div class="footer_logo">
+                            <a href="">
+                                <img src="./images/logo_footer.png" alt="" width="100%">
+                            </a>
+                        </div>
+                        <p id="footer_text"> 
+                            Dsign provides a comprehensive range 
+                            of signage solutions to meet all your sign needs.       
+                        </p>
+                        
+                    </div>
+                    <div class="col-3 footer_log_col-2">
+                        
+                        <div class="footer_social">
+                            <div class="foooter_icon" >
+                                <i class="fa-solid fa-phone" ></i>
+                            </div>
+                            <div class=" footer_social_cont" >
+                                <a href="tel:++966594870143">+966 59 487 0143</a>
+                            </div>
+                        </div>
+                        <div class="footer_social">
+                            <div class=" foooter_icon" >
+                                <i class="fa-solid fa-globe" ></i>
+                            </div>
+                            <div class="footer_social_cont">
+                                <a href="https://www.dsign.sa.com"  target="_blank" title="Visit our website">www.dsign.sa.com</a>
+                            </div>
+                        </div>
+                        <div class="footer_social">
+                            <div class=" foooter_icon" >
+                                <i class="fa-solid fa-envelope" ></i>
+                            </div>
+                            <div class="footer_social_cont" >
+                                <a href="mailto:dsign@dsign.sa.com?subject=Inquiry&body=Hello%20there">dsign@dsign.sa.com</a>
+                            </div>
+                        </div>
+                        <div class="footer_Social_meadia_icons ">
+                            <a href="https://www.instagram.com/your_instagram_username/" target="_blank" >
+                                <i class="fa-brands fa-instagram" ></i>
+                            </a>
+                            <a href="https://wa.me/1234567890?text=Hello%2C%20there"  >
+                                <i class="fa-brands fa-whatsapp" "></i>
+                            </a>
+                            <a href="https://www.facebook.com/yourfacebookpagename" target="_blank" >
+                                <i class="fa-brands fa-facebook" ></i>
+                            </a>
+                            <a href="https://www.snapchat.com/add/username" >
+                                <i class="fa-brands fa-snapchat"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3 footer_log_col-2">
+                        <div>
+                            <iframe id="footer_map"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15658.129269103001!2d75.95594865182768!3d11.148167277293961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64ee2471144f5%3A0x8692de4117c315d!2sKondotty%2C%20Kerala%20673638!5e0!3m2!1sen!2sin!4v1723438232507!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+			<!------------------footer land-------------------------------->
+		<footer>
+			<div class="text-center pt-2 pb-2" style="background-color: #ffffff">
+				Developed by <a href=""><img src="./images/imag/dmag-logo.png" alt="developer-logo" width="43px" height="19px"></a>
+				
+			</div>
+		</footer>
+    </section>
+
+
+
+
+
+    <!-- Animation js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- boostrap/js------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
